@@ -6,7 +6,7 @@ Dokumentasi ini merangkum seluruh proses instalasi **Toko SaaS Boilerplate** unt
 
 ## 1. Prasyarat Domain
 
-Karena aplikasi ini menggunakan skema arsitektur *Subdomain Based Routing* (`{tenant}.domain.com`), **WAJIB** menggunakan top-level domain yang berbeda dari instalasi utama untuk setiap *clone* aplikasi baru (Misalnya: `saas-baru.com`). Hal ini penting agar *wildcard* Nginx (`*.saas-baru.com`) tidak tumpang tindih dengan domain SaaS utama Anda.
+Karena aplikasi ini menggunakan skema arsitektur *Subdomain Based Routing* (`{tenant}.domain.com`), **WAJIB** menggunakan top-level domain yang berbeda dari instalasi utama untuk setiap *clone* aplikasi baru (Misalnya: `sahstore.my.id`). Hal ini penting agar *wildcard* Nginx (`*.sahstore.my.id`) tidak tumpang tindih dengan domain SaaS utama Anda.
 
 ## 2. Clone Repository & Install Dependencies
 
@@ -38,9 +38,9 @@ Anda wajib membuat *database* dan *user* PostgreSQL yang berbeda untuk setiap ap
 sudo -u postgres psql
 
 # Buat set kredensial baru
-CREATE USER saas_user2 WITH PASSWORD 'saas_pass2';
-CREATE DATABASE saas_core2 OWNER saas_user2;
-GRANT ALL PRIVILEGES ON DATABASE saas_core2 TO saas_user2;
+CREATE USER toko_user WITH PASSWORD 'saas_pass2';
+CREATE DATABASE toko_core OWNER toko_user;
+GRANT ALL PRIVILEGES ON DATABASE toko_core TO toko_user;
 \q
 ```
 
@@ -67,11 +67,11 @@ php artisan key:generate
 Ubah parameter krusial di file `.env` di dalam folder `/project/`:
 ```env
 APP_NAME="SaaS Boilerplate 2"
-APP_URL=https://saas-baru.com
-APP_DOMAIN=saas-baru.com
+APP_URL=https://sahstore.my.id
+APP_DOMAIN=sahstore.my.id
 
-DB_DATABASE=saas_core2
-DB_USERNAME=saas_user2
+DB_DATABASE=toko_core
+DB_USERNAME=toko_user
 DB_PASSWORD=saas_pass2
 
 # Reverb Connection
@@ -79,7 +79,7 @@ BROADCAST_DRIVER=reverb
 REVERB_PORT=8096
 
 # Sanctum Domain harus mendaftarkan domain utama dan wildard barunya
-SANCTUM_STATEFUL_DOMAINS="localhost,127.0.0.1,saas-baru.com,*.saas-baru.com"
+SANCTUM_STATEFUL_DOMAINS="localhost,127.0.0.1,sahstore.my.id,*.sahstore.my.id"
 
 # Konfigurasi WhatsApp
 WHATSAPP_SERVICE_ENABLED=true
@@ -106,20 +106,20 @@ WHATSAPP_INTERNAL_TOKEN=change-me-to-secure-token
 ## 7. Session, Cache, & Redis 🗃️
 
 - **File Driver**: Mengingat folder *clone* ini berbeda path sistem operasi dari app utama, konfigurasi bawaan `SESSION_DRIVER=file` dan `CACHE_DRIVER=file` tidak akan saling bentrok ukurannya maupun filenya.
-- **Shared Session Cookie**: Pastikan variabel `SESSION_DOMAIN=.saas-baru.com` (*ditambahkan titik di depan*) sudah dipasang di `.env` agar sesi login pengguna menyeberang dengan mulus ke dashboard tenant (`tenant.saas-baru.com`).
+- **Shared Session Cookie**: Pastikan variabel `SESSION_DOMAIN=.sahstore.my.id` (*ditambahkan titik di depan*) sudah dipasang di `.env` agar sesi login pengguna menyeberang dengan mulus ke dashboard tenant (`tenant.sahstore.my.id`).
 - **Redis Driver**: JIka Anda memutuskan me-manage cache dalam Redis Server (`127.0.0.1:6379`), instalasi kedua akan saling mengenali dan menghapus sesi apabila Anda lupa mengganti *Key Prefix*. Maka **pastikan `REDIS_PREFIX=namaunik_` berbeda di pengaturan `.env`**.
 
 ---
 
 ## 8. Web Server Configuration (Nginx) 🌐
 
-Anda harus membuat *Virtual Host* Nginx baru di `/etc/nginx/sites-available/saas-baru.com`. Config Nginx harus secara spesifik me-*redirect* dan mem-*proxy* port `8016` (Web) dan port `8096` (Sockets).
+Anda harus membuat *Virtual Host* Nginx baru di `/etc/nginx/sites-available/sahstore.my.id`. Config Nginx harus secara spesifik me-*redirect* dan mem-*proxy* port `8016` (Web) dan port `8096` (Sockets).
 
 ### Contoh Blok Nginx
 ```nginx
-# Tenant Subdomains - HTTPS (*.saas-baru.com)
+# Tenant Subdomains - HTTPS (*.sahstore.my.id)
 server {
-    server_name *.saas-baru.com saas-baru.com;
+    server_name *.sahstore.my.id sahstore.my.id;
 
     location / {
         proxy_pass http://127.0.0.1:8016; # -> PORT BARU
