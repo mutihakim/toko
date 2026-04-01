@@ -10,7 +10,7 @@ module.exports = {
             env: {
                 NODE_ENV: 'production',
                 PORT: 3025,
-                APP_CALLBACK_URL: 'https://toko-baru.com',
+                APP_CALLBACK_URL: 'https://sahstore.my.id',
                 WHATSAPP_INTERNAL_TOKEN: 'change-me',
                 WA_AUTH_DIR: './wa-auth',
                 REQUEST_TIMEOUT_MS: 8000,

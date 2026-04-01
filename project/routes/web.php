@@ -59,7 +59,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/settings/theme', ThemePreferenceController::class)->name('settings.theme.update');
 
     Route::middleware(['tenant.initialize', 'tenant.access', 'permission.team'])
-        ->domain('{tenant}.'.env('APP_DOMAIN', 'toko-baru.com'))
+        ->domain('{tenant}.'.env('APP_DOMAIN', 'sahstore.my.id'))
         ->group(function () {
             Route::get('/dashboard', [TenantWorkspaceController::class, 'dashboard'])
                 ->middleware('tenant.feature:dashboard,view')

@@ -50,7 +50,7 @@ export default function AcceptInvitation({ token, status, invitation }: Props) {
             if (response.data.data.accepted) {
                 notify.success(t('auth.notifications.invitation_accepted'));
                 const tenantSlug = response.data.data.tenant_slug;
-                window.location.href = `//${tenantSlug}.toko-baru.com/dashboard`;
+                window.location.href = `//${tenantSlug}.sahstore.my.id/dashboard`;
                 return;
             }
 

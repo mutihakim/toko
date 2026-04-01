@@ -48,7 +48,7 @@ export default function Selector({ tenants }: { tenants: Tenant[] }) {
                                             </div>
                                             <span className="badge text-bg-light">{tenant.role_code}</span>
                                         </div>
-                                        <a className="btn btn-primary btn-sm mt-3" href={`//${tenant.slug}.toko-baru.com/dashboard`}>
+                                        <a className="btn btn-primary btn-sm mt-3" href={`//${tenant.slug}.sahstore.my.id/dashboard`}>
                                             Buka Workspace
                                         </a>
                                     </Card.Body>

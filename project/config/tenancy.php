@@ -19,8 +19,8 @@ return [
     'central_domains' => [
         '127.0.0.1',
         'localhost',
-        'toko-baru.com',
-        'www.toko-baru.com',
+        'sahstore.my.id',
+        'www.sahstore.my.id',
     ],
 
     /**

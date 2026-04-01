@@ -23,7 +23,7 @@ Tujuan utamanya:
 
 ```mermaid
 flowchart TD
-  A["User request https://{tenant}.toko-baru.com/settings/profile"] --> B["tenant.initialize"]
+  A["User request https://{tenant}.sahstore.my.id/settings/profile"] --> B["tenant.initialize"]
   B --> C["tenant.access"]
   C --> D["permission.team"]
   D --> E["TenantSettingsController"]
@@ -35,16 +35,16 @@ flowchart TD
 
 | UI | Route | Middleware Kunci | Backend |
 |---|---|---|---|
-| Settings landing | `GET https://{tenant}.toko-baru.com/settings` | `tenant.initialize`, `tenant.access`, `permission.team` | redirect ke `tenant.settings.profile` |
-| Organization Profile | `GET https://{tenant}.toko-baru.com/settings/profile` | `tenant.initialize`, `tenant.access`, `permission.team` | `TenantSettingsController::profile` |
-| Save Organization Profile | `PATCH https://{tenant}.toko-baru.com/settings/profile` | sama | `TenantSettingsController::updateProfile` + `TenantProfileUpdateRequest` |
-| Branding | `GET https://{tenant}.toko-baru.com/settings/branding` | sama | `TenantSettingsController::branding` |
-| Upload Branding | `POST https://{tenant}.toko-baru.com/settings/branding` | sama | `TenantSettingsController::updateBranding` + `TenantBrandingUpdateRequest` |
-| Reset Branding Slot | `DELETE https://{tenant}.toko-baru.com/settings/branding/{slot}` | sama | `TenantSettingsController::removeBranding` |
-| Localization | `GET https://{tenant}.toko-baru.com/settings/localization` | sama | `TenantSettingsController::localization` |
-| Save Localization | `PATCH https://{tenant}.toko-baru.com/settings/localization` | sama | `TenantSettingsController::updateLocalization` + `TenantLocalizationUpdateRequest` |
-| Billing | `GET https://{tenant}.toko-baru.com/settings/billing` | sama | `TenantSettingsController::billing` |
-| Save Billing | `PATCH https://{tenant}.toko-baru.com/settings/billing` | sama | `TenantSettingsController::updateBilling` + `TenantBillingUpdateRequest` |
+| Settings landing | `GET https://{tenant}.sahstore.my.id/settings` | `tenant.initialize`, `tenant.access`, `permission.team` | redirect ke `tenant.settings.profile` |
+| Organization Profile | `GET https://{tenant}.sahstore.my.id/settings/profile` | `tenant.initialize`, `tenant.access`, `permission.team` | `TenantSettingsController::profile` |
+| Save Organization Profile | `PATCH https://{tenant}.sahstore.my.id/settings/profile` | sama | `TenantSettingsController::updateProfile` + `TenantProfileUpdateRequest` |
+| Branding | `GET https://{tenant}.sahstore.my.id/settings/branding` | sama | `TenantSettingsController::branding` |
+| Upload Branding | `POST https://{tenant}.sahstore.my.id/settings/branding` | sama | `TenantSettingsController::updateBranding` + `TenantBrandingUpdateRequest` |
+| Reset Branding Slot | `DELETE https://{tenant}.sahstore.my.id/settings/branding/{slot}` | sama | `TenantSettingsController::removeBranding` |
+| Localization | `GET https://{tenant}.sahstore.my.id/settings/localization` | sama | `TenantSettingsController::localization` |
+| Save Localization | `PATCH https://{tenant}.sahstore.my.id/settings/localization` | sama | `TenantSettingsController::updateLocalization` + `TenantLocalizationUpdateRequest` |
+| Billing | `GET https://{tenant}.sahstore.my.id/settings/billing` | sama | `TenantSettingsController::billing` |
+| Save Billing | `PATCH https://{tenant}.sahstore.my.id/settings/billing` | sama | `TenantSettingsController::updateBilling` + `TenantBillingUpdateRequest` |
 
 Referensi implementasi:
 

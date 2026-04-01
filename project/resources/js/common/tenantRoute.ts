@@ -3,7 +3,7 @@ import { usePage } from '@inertiajs/react';
 function buildTenantPath(slug: string | undefined, isSuperadmin: boolean, path = ''): string {
     if (!slug) return isSuperadmin ? '/tenants' : '/tenant-access-required';
     const normalized = path.startsWith('/') ? path : `/${path}`;
-    return `//${slug}.toko-baru.com${normalized}`;
+    return `//${slug}.sahstore.my.id${normalized}`;
 }
 
 function tenantSlugFromPath(): string | undefined {

@@ -41,7 +41,7 @@ function TenantsPage({ tenants }: Props) {
         setLoadingTenantId(tenant.id);
         try {
             await axios.post(`/admin/impersonations/${targetId}`);
-            window.location.href = `//${tenant.slug}.toko-baru.com/dashboard`;
+            window.location.href = `//${tenant.slug}.sahstore.my.id/dashboard`;
         } catch (err: any) {
             const parsed = parseApiError(err, t('admin.notifications.impersonation_start_failed_title'));
             notify.error({
@@ -145,7 +145,7 @@ function TenantsPage({ tenants }: Props) {
                                                 )}
                                             </td>
                                             <td className="text-end">
-                                                <a href={`//${tenant.slug}.toko-baru.com/dashboard`} className="btn btn-soft-primary btn-sm me-2">
+                                                <a href={`//${tenant.slug}.sahstore.my.id/dashboard`} className="btn btn-soft-primary btn-sm me-2">
                                                     Open Read-only
                                                 </a>
                                                 <Button

@@ -8,18 +8,18 @@ Dokumen ini memetakan halaman UI ke route dan backend contract untuk mempercepat
 
 | UI Page | Inertia Page | Web Route | Guard Kunci |
 |---|---|---|---|
-| Dashboard | `Tenant/Dashboard` | `https://{tenant}.toko-baru.com/dashboard` | `tenant.feature:dashboard,view` |
-| Members | `Tenant/Members/Index` | `https://{tenant}.toko-baru.com/members` | `tenant.feature:team.members,view` |
-| Roles | `Tenant/Roles/Index` | `https://{tenant}.toko-baru.com/roles` | `tenant.feature:team.roles,view` |
-| Invitations | `Tenant/Invitations/Index` | `https://{tenant}.toko-baru.com/invitations` | `tenant.feature:team.invitations,view` |
-| WhatsApp Settings | `Tenant/WhatsApp/Settings` | `https://{tenant}.toko-baru.com/whatsapp/settings` | `tenant.feature:whatsapp.settings,view` |
-| WhatsApp Chats | `Tenant/WhatsApp/Chats` | `https://{tenant}.toko-baru.com/whatsapp/chats` | `tenant.feature:whatsapp.chats,view` |
-| Settings landing | redirect | `https://{tenant}.toko-baru.com/settings` | `tenant.initialize`, `tenant.access`, `permission.team` |
-| Organization Profile | `Tenant/Settings/Profile` | `https://{tenant}.toko-baru.com/settings/profile` | `tenant.initialize`, `tenant.access`, `permission.team`, controller permission check |
-| Branding | `Tenant/Settings/Branding` | `https://{tenant}.toko-baru.com/settings/branding` | `tenant.initialize`, `tenant.access`, `permission.team`, controller permission check |
-| Localization | `Tenant/Settings/Localization` | `https://{tenant}.toko-baru.com/settings/localization` | `tenant.initialize`, `tenant.access`, `permission.team`, controller permission check |
-| Billing | `Tenant/Settings/Billing` | `https://{tenant}.toko-baru.com/settings/billing` | `tenant.initialize`, `tenant.access`, `permission.team`, controller permission check |
-| Upgrade Required | `Tenant/UpgradeRequired` | `https://{tenant}.toko-baru.com/upgrade-required` | redirect dari `tenant.feature` |
+| Dashboard | `Tenant/Dashboard` | `https://{tenant}.sahstore.my.id/dashboard` | `tenant.feature:dashboard,view` |
+| Members | `Tenant/Members/Index` | `https://{tenant}.sahstore.my.id/members` | `tenant.feature:team.members,view` |
+| Roles | `Tenant/Roles/Index` | `https://{tenant}.sahstore.my.id/roles` | `tenant.feature:team.roles,view` |
+| Invitations | `Tenant/Invitations/Index` | `https://{tenant}.sahstore.my.id/invitations` | `tenant.feature:team.invitations,view` |
+| WhatsApp Settings | `Tenant/WhatsApp/Settings` | `https://{tenant}.sahstore.my.id/whatsapp/settings` | `tenant.feature:whatsapp.settings,view` |
+| WhatsApp Chats | `Tenant/WhatsApp/Chats` | `https://{tenant}.sahstore.my.id/whatsapp/chats` | `tenant.feature:whatsapp.chats,view` |
+| Settings landing | redirect | `https://{tenant}.sahstore.my.id/settings` | `tenant.initialize`, `tenant.access`, `permission.team` |
+| Organization Profile | `Tenant/Settings/Profile` | `https://{tenant}.sahstore.my.id/settings/profile` | `tenant.initialize`, `tenant.access`, `permission.team`, controller permission check |
+| Branding | `Tenant/Settings/Branding` | `https://{tenant}.sahstore.my.id/settings/branding` | `tenant.initialize`, `tenant.access`, `permission.team`, controller permission check |
+| Localization | `Tenant/Settings/Localization` | `https://{tenant}.sahstore.my.id/settings/localization` | `tenant.initialize`, `tenant.access`, `permission.team`, controller permission check |
+| Billing | `Tenant/Settings/Billing` | `https://{tenant}.sahstore.my.id/settings/billing` | `tenant.initialize`, `tenant.access`, `permission.team`, controller permission check |
+| Upgrade Required | `Tenant/UpgradeRequired` | `https://{tenant}.sahstore.my.id/upgrade-required` | redirect dari `tenant.feature` |
 
 ## Admin Area
 

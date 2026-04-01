@@ -16,13 +16,13 @@ This repository is organized into three main components:
 
 The application is deployed on **Ubuntu** with the following stack:
 - **Web Server**: Nginx (serving via PHP-FPM)
-- **Domain**: `toko-baru.com`
-- **Subdomain**: `velzon.toko-baru.com`
+- **Domain**: `sahstore.my.id`
+- **Subdomain**: `velzon.sahstore.my.id`
 - **Process Manager**: PM2 (Handling Queue Workers, Reverb, and Docs)
 
 ## 📖 Documentation
 
-Detailed documentation is available at [https://docs.toko-baru.com](https://docs.toko-baru.com).
+Detailed documentation is available at [https://docs.sahstore.my.id](https://docs.sahstore.my.id).
 
 To run documentation locally:
 ```bash
