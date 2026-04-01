@@ -9,7 +9,7 @@ module.exports = {
             max_memory_restart: '512M',
             env: {
                 NODE_ENV: 'production',
-                PORT: 3025,
+                PORT: 3026,
                 APP_CALLBACK_URL: 'https://sahstore.my.id',
                 WHATSAPP_INTERNAL_TOKEN: 'change-me',
                 WA_AUTH_DIR: './wa-auth',
